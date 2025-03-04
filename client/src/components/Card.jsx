@@ -1,57 +1,33 @@
 import React from "react";
 
-const Card = ({ children, className = "", ...props }) => {
+const Card = ({
+  children,
+  title,
+  subtitle,
+  footer,
+  className = "",
+  onClick,
+  hoverable = false,
+}) => {
   return (
     <div
-      className={`bg-white rounded-lg shadow-md overflow-hidden ${className}`}
-      {...props}
+      className={`bg-white rounded-lg shadow-md overflow-hidden ${
+        hoverable ? "hover:shadow-lg transition-shadow cursor-pointer" : ""
+      } ${className}`}
+      onClick={onClick}
     >
-      {children}
+      {title && (
+        <div className="p-4 border-b">
+          <h3 className="font-semibold text-lg text-gray-800">{title}</h3>
+          {subtitle && <p className="text-gray-600 mt-1">{subtitle}</p>}
+        </div>
+      )}
+
+      <div className="p-4">{children}</div>
+
+      {footer && <div className="p-4 border-t bg-gray-50">{footer}</div>}
     </div>
   );
 };
-
-const CardHeader = ({ children, className = "", ...props }) => {
-  return (
-    <div
-      className={`px-6 py-4 border-b border-gray-100 ${className}`}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-};
-
-const CardTitle = ({ children, className = "", ...props }) => {
-  return (
-    <h3
-      className={`text-lg font-semibold text-gray-900 ${className}`}
-      {...props}
-    >
-      {children}
-    </h3>
-  );
-};
-
-const CardDescription = ({ children, className = "", ...props }) => {
-  return (
-    <p className={`mt-1 text-sm text-gray-500 ${className}`} {...props}>
-      {children}
-    </p>
-  );
-};
-
-const CardContent = ({ children, className = "", ...props }) => {
-  return (
-    <div className={`px-6 py-4 ${className}`} {...props}>
-      {children}
-    </div>
-  );
-};
-
-Card.Header = CardHeader;
-Card.Title = CardTitle;
-Card.Description = CardDescription;
-Card.Content = CardContent;
 
 export default Card;

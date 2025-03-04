@@ -1,118 +1,70 @@
-import { useEffect, useRef } from "react";
-import Card from "./Card";
-
-const featureData = [
-  {
-    title: "Fast Performance",
-    description: "Optimized for speed with React and Node.js",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-10 w-10 text-blue-600"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M13 10V3L4 14h7v7l9-11h-7z"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "Secure Authentication",
-    description: "Robust user authentication and authorization",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-10 w-10 text-blue-600"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "MongoDB Integration",
-    description: "Scalable database solution for your data",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-10 w-10 text-blue-600"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-        />
-      </svg>
-    ),
-  },
-];
+import React from "react";
 
 const Features = () => {
-  const featureRefs = useRef([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-slide-up");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    featureRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      featureRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
-    };
-  }, []);
+  const features = [
+    {
+      icon: "🎬",
+      title: "Interactive Videos",
+      description:
+        "Engaging educational videos that make learning fun and memorable.",
+    },
+    {
+      icon: "🎤",
+      title: "Voice Activities",
+      description:
+        "Practice speaking and pronunciation with voice recognition technology.",
+    },
+    {
+      icon: "👆",
+      title: "Touch Learning",
+      description:
+        "Interactive touch activities for hands-on learning experiences.",
+    },
+    {
+      icon: "📊",
+      title: "Progress Tracking",
+      description:
+        "Monitor your learning journey with detailed progress reports.",
+    },
+    {
+      icon: "🏆",
+      title: "Fun Achievements",
+      description:
+        "Earn badges and rewards as you complete lessons and quizzes.",
+    },
+    {
+      icon: "🎮",
+      title: "Educational Games",
+      description:
+        "Learn through play with our curriculum-aligned educational games.",
+    },
+  ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-          Key Features
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            Special Learning Features
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Our platform is designed to make learning engaging, interactive, and
+            effective.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {featureData.map((feature, index) => (
-            <Card
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {features.map((feature, index) => (
+            <div
               key={index}
-              className="opacity-0"
-              ref={(el) => (featureRefs.current[index] = el)}
+              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
             >
-              <Card.Header className="flex items-center justify-center pt-6 border-none">
-                {feature.icon}
-                <Card.Title className="mt-4">{feature.title}</Card.Title>
-              </Card.Header>
-              <Card.Content className="text-center">
-                <Card.Description>{feature.description}</Card.Description>
-              </Card.Content>
-            </Card>
+              <div className="text-4xl mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-semibold text-indigo-700 mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600">{feature.description}</p>
+            </div>
           ))}
         </div>
       </div>

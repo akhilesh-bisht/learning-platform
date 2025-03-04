@@ -1,49 +1,41 @@
-import { useEffect, useRef } from "react";
-import Button from "./Button";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const titleRef = useRef(null);
-  const descRef = useRef(null);
-  const ctaRef = useRef(null);
-
-  useEffect(() => {
-    // Delayed fade-in animation
-    setTimeout(() => {
-      titleRef.current.classList.add("fade-in");
-    }, 500);
-
-    setTimeout(() => {
-      descRef.current.classList.add("fade-in");
-    }, 1000);
-
-    setTimeout(() => {
-      ctaRef.current.classList.add("fade-in");
-    }, 1500);
-  }, []);
-
   return (
-    <div className="bg-gradient-to-b from-white to-blue-50 py-24 text-center">
-      <div className="container mx-auto px-4">
-        <h1
-          ref={titleRef}
-          className="text-4xl font-extrabold tracking-tight lg:text-5xl opacity-0 text-gray-900"
-        >
-          Modern Web Application
-        </h1>
-        <p
-          ref={descRef}
-          className="mx-auto mt-6 max-w-2xl text-lg text-gray-600 opacity-0"
-        >
-          A powerful web application built with React, Tailwind CSS, Node.js,
-          Express, and MongoDB.
-        </p>
-        <div ref={ctaRef} className="mt-10 opacity-0">
-          <Button size="lg" className="mx-2">
-            Get Started
-          </Button>
-          <Button size="lg" variant="outline" className="mx-2">
-            Learn More
-          </Button>
+    <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-16 px-4">
+      <div className="container mx-auto max-w-6xl">
+        <div className="flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 mb-8 md:mb-0">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Learn English & Math Through Play!
+            </h1>
+            <p className="text-xl mb-6">
+              Interactive lessons with videos, voice activities, and touch games
+              designed for grades 1-8.
+            </p>
+            <div className="space-x-4">
+              <Link
+                to="/register"
+                className="inline-block px-6 py-3 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-indigo-100 transition shadow-md"
+              >
+                Start Learning Now
+              </Link>
+              <Link
+                to="/about"
+                className="inline-block px-6 py-3 bg-transparent border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition"
+              >
+                Learn More
+              </Link>
+            </div>
+          </div>
+          <div className="md:w-1/2">
+            <img
+              src="/api/placeholder/600/400"
+              alt="Children learning"
+              className="rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </div>
     </div>

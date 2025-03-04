@@ -1,45 +1,75 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import Button from "./Button";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("token") ? true : false
+  );
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    navigate("/");
+  };
 
   return (
-    <nav className="bg-white border-b border-gray-200 py-4 shadow-sm">
-      <div className="container mx-auto flex items-center justify-between px-4">
-        <Link to="/" className="text-2xl font-bold text-blue-600">
-          WebApp
-        </Link>
+    <nav className="bg-indigo-600 text-white">
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex justify-between items-center">
+          <Link to="/" className="text-xl font-bold flex items-center">
+            <span className="text-2xl mr-2">🎓</span>
+            KidLearn
+          </Link>
 
-        <div className="hidden md:flex items-center space-x-6">
-          <Link
-            to="/"
-            className="text-gray-700 hover:text-blue-600 transition-colors"
-          >
-            Home
-          </Link>
-          <Link
-            to="/dashboard"
-            className="text-gray-700 hover:text-blue-600 transition-colors"
-          >
-            Dashboard
-          </Link>
-          <Link
-            to="/profile"
-            className="text-gray-700 hover:text-blue-600 transition-colors"
-          >
-            Profile
-          </Link>
-          <Button>Sign In</Button>
-        </div>
+          <div className="hidden md:flex items-center space-x-6">
+            <Link to="/" className="hover:text-indigo-200 transition">
+              Home
+            </Link>
+            <Link
+              to="/subject/english"
+              className="hover:text-indigo-200 transition"
+            >
+              English
+            </Link>
+            <Link
+              to="/subject/math"
+              className="hover:text-indigo-200 transition"
+            >
+              Math
+            </Link>
 
-        <div className="md:hidden">
+            {isLoggedIn ? (
+              <>
+                <Link
+                  to="/profile"
+                  className="hover:text-indigo-200 transition"
+                >
+                  My Progress
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="px-4 py-1 bg-white text-indigo-600 rounded-md hover:bg-indigo-100 transition"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <Link
+                to="/login"
+                className="px-4 py-1 bg-white text-indigo-600 rounded-md hover:bg-indigo-100 transition"
+              >
+                Login
+              </Link>
+            )}
+          </div>
+
+          {/* Mobile menu button */}
           <button
-            className="text-gray-500 hover:text-gray-700"
+            className="md:hidden text-white focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {/* Simple hamburger icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -56,33 +86,55 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-      </div>
 
-      {isMenuOpen && (
-        <div className="md:hidden animate-fade-in">
-          <div className="container mx-auto px-4 py-2 space-y-2">
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-3 space-y-2">
             <Link
               to="/"
-              className="block py-2 text-gray-700 hover:text-blue-600"
+              className="block py-2 hover:bg-indigo-700 px-2 rounded"
             >
               Home
             </Link>
             <Link
-              to="/dashboard"
-              className="block py-2 text-gray-700 hover:text-blue-600"
+              to="/subject/english"
+              className="block py-2 hover:bg-indigo-700 px-2 rounded"
             >
-              Dashboard
+              English
             </Link>
             <Link
-              to="/profile"
-              className="block py-2 text-gray-700 hover:text-blue-600"
+              to="/subject/math"
+              className="block py-2 hover:bg-indigo-700 px-2 rounded"
             >
-              Profile
+              Math
             </Link>
-            <Button className="w-full">Sign In</Button>
+
+            {isLoggedIn ? (
+              <>
+                <Link
+                  to="/profile"
+                  className="block py-2 hover:bg-indigo-700 px-2 rounded"
+                >
+                  My Progress
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="block w-full text-left py-2 hover:bg-indigo-700 px-2 rounded"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <Link
+                to="/login"
+                className="block py-2 hover:bg-indigo-700 px-2 rounded"
+              >
+                Login
+              </Link>
+            )}
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </nav>
   );
 };
