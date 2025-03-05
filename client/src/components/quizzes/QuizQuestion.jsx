@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import MultipleChoiceQuestion from "./question-types/MultipleChoiceQuestion";
-import TrueFalseQuestion from "./question-types/TrueFalseQuestion";
-import FillInBlankQuestion from "./question-types/FillInBlankQuestion";
-import MatchingQuestion from "./question-types/MatchingQuestion";
-import Button from "../common/Button";
+// import MultipleChoiceQuestion from "./question-types/MultipleChoiceQuestion";
+// import TrueFalseQuestion from "./question-types/TrueFalseQuestion";
+// import FillInBlankQuestion from "./question-types/FillInBlankQuestion";
+// import MatchingQuestion from "./question-types/MatchingQuestion";
+import Button from "../Button";
 
 const QuizQuestion = ({
   question,

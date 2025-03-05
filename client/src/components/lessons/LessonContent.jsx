@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { markLessonComplete } from "../../redux/actions/progressActions";
-import { useAuth } from "../../contexts/AuthContext";
-import InteractiveElement from "./InteractiveElement";
-import LessonNavigation from "./LessonNavigation";
-import ConfettiEffect from "../common/ConfettiEffect";
-import Button from "../common/Button";
+// import { markLessonComplete } from "../../redux/actions/progressActions";
+// import { useAuth } from "../../contexts/AuthContext";
+// import InteractiveElement from "./InteractiveElement";
+// import LessonNavigation from "./LessonNavigation";
+// import ConfettiEffect from "../common/ConfettiEffect";
+// import Button from "../common/Button";
 
 const LessonContent = ({ lesson, nextLessonId, nextQuizId }) => {
   const [currentSlide, setCurrentSlide] = useState(0);

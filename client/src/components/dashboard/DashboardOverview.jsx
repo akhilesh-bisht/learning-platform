@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchUserProgress,
-  fetchRecommendedLessons,
-} from "../../redux/actions/progressActions";
-import { useAuth } from "../../contexts/AuthContext";
+// import { useDispatch, useSelector } from "react-redux";
+// import {
+//   fetchUserProgress,
+//   fetchRecommendedLessons,
+// } from "../../redux/actions/progressActions";
+// import { useAuth } from "../../contexts/AuthContext";
 import ProgressChart from "../progress/ProgressChart";
-import SubjectCard from "../common/SubjectCard";
-import RecommendedLessons from "./RecommendedLessons";
-import AchievementBadges from "../progress/AchievementBadges";
-import LearningStreak from "../progress/LearningStreak";
-import LoadingSpinner from "../common/LoadingSpinner";
+// import SubjectCard from "../common/SubjectCard";
+// import RecommendedLessons from "./RecommendedLessons";
+// import AchievementBadges from "../progress/AchievementBadges";
+// import LearningStreak from "../progress/LearningStreak";
+// import LoadingSpinner from "../common/LoadingSpinner";
 
 const DashboardOverview = () => {
   const dispatch = useDispatch();

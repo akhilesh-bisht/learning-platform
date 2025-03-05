@@ -1,6 +1,6 @@
 import React from "react";
 import SubscriptionCard from "../components/common/SubscriptionCard";
-import FAQSection from "../components/common/FAQSection";
+// import FAQSection from "../components/common/FAQSection";
 
 const SubscriptionPage = () => {
   const subscriptionPlans = [
