@@ -1,5 +1,5 @@
 import React from "react";
-import FAQ from "../components/FAQ";
+import FAQ from "../components/Faq";
 import img from "../assets/home1.png";
 
 const About = () => {
