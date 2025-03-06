@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 import HomePng from "../assets/home1.png";
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-screen flex items-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 lg:px-16">
+    <section className="relative w-full min-h-screen flex items-center  text-black px-6 lg:px-16">
       <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between">
         {/* Left Side - Text */}
         <div className="lg:w-1/2 text-center lg:text-left">
           <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4">
-            Learn English & Math Through Play!
+            Learn, Play, Grow
           </h1>
           <p className="text-lg lg:text-xl mb-6">
-            Interactive lessons with videos, voice activities, and touch games
-            designed for grades 1-8.
+            An interactive learning platform designed for students in grades
+            1-8, making Math and English fun and engaging.
           </p>
           <div className="flex justify-center lg:justify-start gap-4">
             <Link

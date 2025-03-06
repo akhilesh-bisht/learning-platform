@@ -67,7 +67,7 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`flex-1 rounded-lg overflow-hidden ${
+              className={`flex-1 rounded-lg overflow-hidden hover:border-black ${
                 plan.highlighted
                   ? "shadow-xl border-2 border-indigo-500 transform md:-translate-y-4"
                   : "shadow-md border border-gray-200"
