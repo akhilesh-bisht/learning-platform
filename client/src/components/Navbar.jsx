@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   BookOpen,
@@ -8,12 +8,10 @@ import {
   Book,
   Calculator,
   ListOrdered,
-  Sun,
-  Moon,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Button from "@mui/material/Button";
-import Switch from "@mui/material/Switch"; // MUI Switch for Theme Toggle
+import { ModeToggle } from "./mode-toggle"; // Import ModeToggle
 
 const navLinks = [
   {
@@ -72,21 +70,6 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("token") ? true : false
   );
-
-  // Dark Mode State
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("theme") === "dark"
-  );
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDarkMode]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -151,16 +134,7 @@ const Navbar = () => {
         {/* Right Side (Login/Logout & Theme Toggle) */}
         <div className="hidden md:flex gap-4 items-center">
           {/* Dark Mode Toggle */}
-          <div className="flex items-center gap-2">
-            <Sun className="w-5 h-5 text-yellow-500 dark:text-gray-400" />
-            <Switch
-              checked={isDarkMode}
-              onChange={() => setIsDarkMode(!isDarkMode)}
-              color="default"
-            />
-            <Moon className="w-5 h-5 text-gray-900 dark:text-white" />
-          </div>
-
+          <ModeToggle /> {/* Replaces old switch */}
           {isLoggedIn ? (
             <>
               <Link

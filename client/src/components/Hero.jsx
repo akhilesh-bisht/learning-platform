@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HomePng from "../assets/home1.png";
+import img from "../assets/about.png";
+import Slider from "./Slider";
 const Hero = () => {
   return (
     <section className="relative w-full min-h-screen flex items-center  text-black px-6 lg:px-16">
@@ -32,14 +34,9 @@ const Hero = () => {
 
         {/* Right Side - Image */}
         <div className="lg:w-1/2 flex justify-center">
-          <img
-            src={HomePng}
-            alt="Children learning"
-            className="rounded-lg shadow-lg animate-float"
-          />
+          <Slider />
         </div>
       </div>
-
       {/* Scrolling Effect */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <span className="block animate-bounce text-3xl">⬇</span>

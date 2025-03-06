@@ -1,9 +1,21 @@
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
-
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #000000;
+    --radius: 0.5rem;
+  }
+}
 @custom-variant dark (&:is(.dark *));
 /* Custom animation utilities */
+
+/* index.css */
+body {
+  @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+}
+
 .animate-fade-in {
   animation: fadeIn 0.5s ease-in;
 }
