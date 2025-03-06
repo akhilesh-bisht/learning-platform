@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout"; // Import the layout
 import Home from "./pages/Home";
-import AboutUs from "./pages/about";
+import AboutUs from "./pages/About";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { BackgroundBeams } from "./components/ui/background-beams";
 
