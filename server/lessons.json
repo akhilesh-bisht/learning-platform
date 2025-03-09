@@ -1,0 +1,127 @@
+[
+  {
+    "title": "Counting Numbers",
+    "description": "Learn to count numbers from 1 to 10.",
+    "subject": "Math",
+    "grade": 1,
+    "videoUrl": "https://www.example.com/counting-numbers-video",
+    "content": "Counting is the basic skill to understand numbers.",
+    "quiz": [
+      {
+        "question": "What number comes after 3?",
+        "options": ["1", "2", "4", "5"],
+        "correctAnswer": "4"
+      },
+      {
+        "question": "How many fingers do you have?",
+        "options": ["8", "9", "10", "12"],
+        "correctAnswer": "10"
+      }
+    ]
+  },
+  {
+    "title": "Shapes and Colors",
+    "description": "Identify basic shapes and colors.",
+    "subject": "Math",
+    "grade": 1,
+    "videoUrl": "https://www.example.com/shapes-colors-video",
+    "content": "Shapes have different names like circles, squares, and triangles.",
+    "quiz": [
+      {
+        "question": "What shape has three sides?",
+        "options": ["Square", "Circle", "Triangle", "Rectangle"],
+        "correctAnswer": "Triangle"
+      },
+      {
+        "question": "What color is the sun?",
+        "options": ["Blue", "Yellow", "Green", "Red"],
+        "correctAnswer": "Yellow"
+      }
+    ]
+  },
+  {
+    "title": "Addition Basics",
+    "description": "Learn how to add numbers together.",
+    "subject": "Math",
+    "grade": 2,
+    "videoUrl": "https://www.example.com/addition-video",
+    "content": "Addition helps us find the total of two numbers.",
+    "quiz": [
+      {
+        "question": "What is 3 + 2?",
+        "options": ["4", "5", "6", "3"],
+        "correctAnswer": "5"
+      },
+      {
+        "question": "What is 10 + 5?",
+        "options": ["12", "15", "20", "25"],
+        "correctAnswer": "15"
+      }
+    ]
+  },
+  {
+    "title": "Subtraction Basics",
+    "description": "Learn how to subtract numbers.",
+    "subject": "Math",
+    "grade": 2,
+    "videoUrl": "https://www.example.com/subtraction-video",
+    "content": "Subtraction means taking one number away from another.",
+    "quiz": [
+      {
+        "question": "What is 9 - 3?",
+        "options": ["3", "5", "6", "7"],
+        "correctAnswer": "6"
+      },
+      {
+        "question": "What is 8 - 4?",
+        "options": ["2", "3", "4", "5"],
+        "correctAnswer": "4"
+      }
+    ]
+  },
+  {
+    "title": "Nouns and Verbs",
+    "description": "Understand nouns and verbs with examples.",
+    "subject": "English",
+    "grade": 1,
+    "videoUrl": "https://www.example.com/nouns-verbs-video",
+    "content": "Nouns are names of things, people, or places. Verbs are action words.",
+    "quiz": [
+      {
+        "question": "Which one is a noun?",
+        "options": ["Run", "Jump", "Apple", "Quickly"],
+        "correctAnswer": "Apple"
+      },
+      {
+        "question": "Which word is a verb?",
+        "options": ["Dog", "Sing", "House", "Tree"],
+        "correctAnswer": "Sing"
+      }
+    ]
+  },
+  {
+    "title": "Sentence Formation",
+    "description": "Learn how to make a correct sentence.",
+    "subject": "English",
+    "grade": 2,
+    "videoUrl": "https://www.example.com/sentence-formation-video",
+    "content": "A sentence must have a subject and a verb.",
+    "quiz": [
+      {
+        "question": "Which is a complete sentence?",
+        "options": [
+          "The cat.",
+          "Plays in the garden.",
+          "The cat plays.",
+          "Garden in."
+        ],
+        "correctAnswer": "The cat plays."
+      },
+      {
+        "question": "Which word is missing? 'I ____ to school every day.'",
+        "options": ["Go", "Run", "Eat", "Sing"],
+        "correctAnswer": "Go"
+      }
+    ]
+  }
+]
