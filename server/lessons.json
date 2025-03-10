@@ -20,6 +20,26 @@
     ]
   },
   {
+    "title": "Counting Numbers",
+    "description": "Learn to count numbers from 1 to 10.",
+    "subject": "Math",
+    "grade": 1,
+    "videoUrl": "https://www.example.com/counting-numbers-video",
+    "content": "Counting is the basic skill to understand numbers.",
+    "quiz": [
+      {
+        "question": "What number comes after 3?",
+        "options": ["1", "2", "4", "5"],
+        "correctAnswer": "4"
+      },
+      {
+        "question": "How many fingers do you have?",
+        "options": ["8", "9", "10", "12"],
+        "correctAnswer": "10"
+      }
+    ]
+  },
+  {
     "title": "Shapes and Colors",
     "description": "Identify basic shapes and colors.",
     "subject": "Math",
